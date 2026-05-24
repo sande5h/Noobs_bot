@@ -1,0 +1,23 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg:        #0f172a;
+  --text:      #e2e8f0;
+  --muted:     #94a3b8;
+  --accent:    #eab308;
+  --border:    rgba(229, 231, 235, 0.10);
+  --teal-bg:   #134e4a;
+  --teal-text: #5eead4;
+}
+
+html, body {
+  height: 100%;
+  background: var(--bg);
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

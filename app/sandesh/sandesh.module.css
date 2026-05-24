@@ -1,0 +1,349 @@
+/* ── Page wrapper ── */
+.page {
+  position: relative;
+  min-height: 100vh;
+  font-family: var(--font-inter), ui-sans-serif, sans-serif;
+}
+
+/* ── Cursor spotlight ── */
+.spotlight {
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  z-index: 30;
+  transition: background 0.1s;
+}
+
+/* ── Two-column layout ── */
+.layout {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 48px;
+}
+
+/* ── Left sidebar ── */
+.sidebar {
+  width: 46%;
+  padding: 96px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  max-height: 100vh;
+}
+
+.backLink {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  text-decoration: none;
+  margin-bottom: 36px;
+  transition: color 0.15s;
+}
+.backLink:hover { color: var(--text); }
+
+.name {
+  font-size: 48px;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  color: var(--text);
+  line-height: 1;
+  margin-bottom: 12px;
+}
+
+.role {
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--text);
+  letter-spacing: -0.01em;
+  margin-bottom: 16px;
+}
+
+.tagline {
+  font-size: 15px;
+  font-weight: 400;
+  color: var(--muted);
+  line-height: 1.6;
+  max-width: 300px;
+  margin-bottom: 0;
+}
+
+/* ── Nav ── */
+.nav {
+  margin-top: 48px;
+}
+.nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.navLink {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 10px 0;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.navLine {
+  display: block;
+  height: 1px;
+  width: 32px;
+  background: #475569;
+  transition: width 0.2s ease, background 0.2s ease;
+}
+.navLink:hover .navLine,
+.navLinkActive .navLine {
+  width: 64px;
+  background: var(--text);
+}
+
+.navLabel {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #475569;
+  transition: color 0.2s;
+}
+.navLink:hover .navLabel,
+.navLinkActive .navLabel {
+  color: var(--text);
+}
+
+/* ── Social icons ── */
+.social {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.socialLink {
+  color: #475569;
+  text-decoration: none;
+  transition: color 0.15s;
+}
+.socialLink:hover { color: var(--text); }
+
+/* ── Right content ── */
+.content {
+  width: 54%;
+  padding: 96px 0;
+}
+
+/* ── Section ── */
+.section {
+  margin-bottom: 96px;
+  scroll-margin-top: 96px;
+}
+
+.sectionHeading {
+  display: none; /* hidden on desktop — nav serves as label */
+}
+
+/* ── Prose (about) ── */
+.prose {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.prose p {
+  font-size: 15px;
+  line-height: 1.75;
+  color: var(--muted);
+}
+
+.highlight {
+  color: var(--text);
+  font-weight: 500;
+}
+
+.inlineLink {
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 500;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.15s, color 0.15s;
+}
+.inlineLink:hover {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+
+/* ── Card list ── */
+.cardList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Sibling dimming on hover */
+.cardList:hover .card {
+  opacity: 0.4;
+}
+.cardList:hover .card:hover {
+  opacity: 1;
+}
+
+/* ── Card ── */
+.card {
+  position: relative;
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 16px;
+  padding: 20px 0;
+  transition: opacity 0.2s;
+}
+
+/* Hover background layer */
+.cardBg {
+  position: absolute;
+  inset: -12px -20px;
+  border-radius: 8px;
+  background: transparent;
+  box-shadow: none;
+  transition: background 0.2s, box-shadow 0.2s;
+  z-index: 0;
+}
+.card:hover .cardBg {
+  background: rgba(30, 41, 59, 0.5);
+  box-shadow: inset 0 1px 0 0 rgba(148, 163, 184, 0.08);
+}
+
+.cardDate {
+  position: relative;
+  z-index: 1;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #475569;
+  padding-top: 4px;
+  line-height: 1.4;
+}
+
+.cardBody {
+  position: relative;
+  z-index: 1;
+}
+
+.cardTitle {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--text);
+  margin-bottom: 8px;
+  line-height: 1.4;
+}
+
+.cardTitleLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--text);
+  text-decoration: none;
+  transition: color 0.15s;
+}
+.cardTitleLink:hover {
+  color: var(--accent);
+}
+
+.arrowIcon {
+  display: inline-block;
+  transition: transform 0.15s;
+  flex-shrink: 0;
+}
+.cardTitleLink:hover .arrowIcon {
+  transform: translate(3px, -3px);
+}
+
+.cardCompany {
+  color: var(--text);
+}
+.cardTitleLink:hover .cardCompany {
+  color: var(--accent);
+}
+
+.cardDesc {
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--muted);
+  margin-bottom: 12px;
+}
+
+/* ── Chips ── */
+.chips {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.chip {
+  padding: 4px 12px;
+  border-radius: 9999px;
+  background: var(--teal-bg);
+  color: var(--teal-text);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+/* ── Footer ── */
+.footer {
+  margin-top: 96px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border);
+  font-size: 13px;
+  color: #334155;
+}
+
+.accentText {
+  color: var(--muted);
+}
+
+/* ── Mobile ── */
+@media (max-width: 1024px) {
+  .layout {
+    flex-direction: column;
+    padding: 0 24px;
+  }
+  .sidebar {
+    position: static;
+    max-height: none;
+    width: 100%;
+    padding: 64px 0 32px;
+  }
+  .content {
+    width: 100%;
+    padding: 0 0 64px;
+  }
+  .nav {
+    display: none;
+  }
+  .card {
+    grid-template-columns: 1fr;
+  }
+  .cardDate {
+    padding-top: 0;
+  }
+  .sectionHeading {
+    display: block;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--text);
+    margin-bottom: 24px;
+  }
+}
