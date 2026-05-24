@@ -16,6 +16,7 @@ export default function Home() {
           <Link href="/ramu" className={styles.link}>Ramu</Link>
           <Link href="/nishan" className={styles.link}>Nishan</Link>
           <Link href="/emc" className={styles.link}>EMC Lab</Link>
+          <Link href="/projects" className={styles.link}>Projects</Link>
         </nav>
       </div>
     </main>
