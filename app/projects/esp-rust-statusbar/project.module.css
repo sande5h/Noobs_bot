@@ -453,6 +453,56 @@
   border-radius: 3px;
 }
 
+/* ── Screenshot ── */
+.screenshot {
+  margin-top: 20px;
+}
+
+.screenshotImg {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+}
+
+.screenshotCaption {
+  margin-top: 8px;
+  font-size: 12px;
+  color: var(--muted);
+  letter-spacing: 0.02em;
+}
+
+/* ── Code block ── */
+.codeBlock {
+  background: #080e1a;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.codeBlockLabel {
+  display: block;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  padding: 8px 16px;
+  border-bottom: 1px solid var(--border);
+}
+
+.codeBlockPre {
+  margin: 0;
+  padding: 16px 20px;
+  overflow-x: auto;
+  font-family: ui-monospace, 'Cascadia Code', monospace;
+  font-size: 13px;
+  color: var(--teal-text);
+  line-height: 1.6;
+  white-space: pre;
+}
+
 /* ── Schematic ── */
 .schematicNote {
   font-size: 13px;

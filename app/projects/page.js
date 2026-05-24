@@ -17,6 +17,16 @@ const PROJECTS = [
     team: ['Sandesh', 'Ramu', 'Nishan'],
     year: '2026',
   },
+  {
+    slug: 'esp-rust-statusbar',
+    title: 'ESP-Rust Statusbar',
+    desc: 'A VS Code workflow tool for ESP-RS Rust development on Windows. Auto-detects COM ports, picks MCU variants, and flashes your board from the status bar.',
+    image: null,
+    placeholder: '$ cargo espflash flash --monitor',
+    tags: ['PowerShell', 'Rust', 'ESP-RS', 'VS Code'],
+    team: ['Sandesh'],
+    year: '2026',
+  },
 ];
 
 export default function ProjectsPage() {
@@ -33,13 +43,19 @@ export default function ProjectsPage() {
         {PROJECTS.map((p) => (
           <Link key={p.slug} href={`/projects/${p.slug}`} className={s.card}>
             <div className={s.cardThumb}>
-              <Image
-                src={p.image}
-                alt={p.title}
-                width={600}
-                height={400}
-                className={s.cardImg}
-              />
+              {p.image ? (
+                <Image
+                  src={p.image}
+                  alt={p.title}
+                  width={600}
+                  height={400}
+                  className={s.cardImg}
+                />
+              ) : (
+                <div className={s.cardPlaceholder}>
+                  <span className={s.cardPlaceholderText}>{p.placeholder}</span>
+                </div>
+              )}
             </div>
             <div className={s.cardBody}>
               <div className={s.cardMeta}>
